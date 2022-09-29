@@ -1,0 +1,9 @@
+﻿@using BookCatalog.Dtos
+@model BookDto
+
+@using (Html.BeginForm("BorrowBook", "Book", FormMethod.Post))
+{
+    @Html.Label("Are you sure?")
+        
+    <input type="submit" value="Confirm" class="btn btn-primary"/>
+}

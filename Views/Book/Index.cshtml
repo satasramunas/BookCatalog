@@ -1,0 +1,78 @@
+﻿@model BookCatalog.Dtos.BookDto
+
+<h3>Search for available books:</h3>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.TextBox("SearchString")
+        <input type="submit" value="Search" class="btn btn-primary"/>
+    </p>
+}
+<div class="container d-flex m-0">
+    <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Publisher</th>
+              <th scope="col">Pub. Date</th>
+              <th scope="col">Genre</th>
+              <th scope="col">ISBN code</th>
+              <th scope="col">Status</th>
+      
+            </tr>
+          </thead>
+          <tbody>
+              @foreach (var @book in @Model.AvailableBooks)
+                {
+                <tr>
+                  <td>@book.Title</td>
+                  <td>@book.Author</td>
+                  <td>@book.Publisher</td>
+                  <td>@book.PublishingDate</td>
+                  <td>@book.Genre</td>
+                  <td>@book.ISBNCode</td>
+                  <td>@book.IsAvailable</td>
+                  <td>@Html.ActionLink("Borrow", "BorrowBook", "Book", new { id = @book.Id}, new { @class = "btn btn-primary btn-sm"})</td>
+                </tr>
+                }
+    
+    
+          </tbody>
+        </table>
+    </div>
+    <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Publisher</th>
+              <th scope="col">Pub. Date</th>
+              <th scope="col">Genre</th>
+              <th scope="col">ISBN code</th>
+              <th scope="col">Status</th>
+      
+            </tr>
+          </thead>
+          <tbody>
+              @foreach (var @book in @Model.BorrowedBooks)
+                {
+                <tr>
+                  <td>@book.Title</td>
+                  <td>@book.Author</td>
+                  <td>@book.Publisher</td>
+                  <td>@book.PublishingDate</td>
+                  <td>@book.Genre</td>
+                  <td>@book.ISBNCode</td>
+                  <td>@book.IsAvailable</td>
+                  <td>@Html.ActionLink("Return", "ReturnBook", "Book", new { id = @book.Id}, new { @class = "btn btn-primary"})</td>
+                </tr>
+                }
+    
+    
+          </tbody>
+        </table>
+    </div>
+</div>
