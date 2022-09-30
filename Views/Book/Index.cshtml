@@ -34,7 +34,7 @@
                   <td>@book.Genre</td>
                   <td>@book.ISBNCode</td>
                   <td>@book.IsAvailable</td>
-                  <td>@Html.ActionLink("Borrow", "BorrowBook", "Book", new { id = @book.Id}, new { @class = "btn btn-primary btn-sm"})</td>
+                  <td>@Html.ActionLink("Borrow", "BorrowBook", "Book", new { id = @book.Id}, new { @class = "btn btn-outline-primary btn-sm"})</td>
                 </tr>
                 }
     
@@ -67,7 +67,7 @@
                   <td>@book.Genre</td>
                   <td>@book.ISBNCode</td>
                   <td>@book.IsAvailable</td>
-                  <td>@Html.ActionLink("Return", "ReturnBook", "Book", new { id = @book.Id}, new { @class = "btn btn-primary"})</td>
+                  <td>@Html.ActionLink("Return", "ReturnBook", "Book", new { id = @book.Id}, new { @class = "btn btn-outline-primary btn-sm"})</td>
                 </tr>
                 }
     

@@ -1,6 +1,6 @@
 ﻿@model BookCatalog.Dtos.BookDto
 
-<div>
+<div class="">
     <table class="table">
         <thead>
           <tr>
@@ -25,7 +25,6 @@
                 <td>@book.Genre</td>
                 <td>@book.ISBNCode</td>
                 <td>@book.IsAvailable</td>
-                @*<td>@Html.ActionLink("Borrow", "Update", "Book", new { id = @book.Id}, new { @class = "btn btn-primary"})</td>*@
               </tr>
               }
         </tbody>
